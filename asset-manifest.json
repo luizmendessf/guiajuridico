@@ -1,16 +1,25 @@
 {
   "files": {
     "main.css": "/guiajuridico/static/css/main.34828785.css",
-    "main.js": "/guiajuridico/static/js/main.1930069e.js",
+    "main.js": "/guiajuridico/static/js/main.5174cb5d.js",
     "static/js/488.99a45cc3.chunk.js": "/guiajuridico/static/js/488.99a45cc3.chunk.js",
+    "static/media/busca.jpg": "/guiajuridico/static/media/busca.af4a00037bdfd2891221.jpg",
     "static/media/balanca.jpg": "/guiajuridico/static/media/balanca.107b37f20571ccd5a755.jpg",
+    "static/media/students-campus.jpg": "/guiajuridico/static/media/students-campus.7333b34cb5fe41ba3b53.jpg",
+    "static/media/study-workspace.jpg": "/guiajuridico/static/media/study-workspace.fa319fb14a5bf8dc9ba2.jpg",
+    "static/media/legal-meeting.jpg": "/guiajuridico/static/media/legal-meeting.3edccdc327b7c9ff8174.jpg",
+    "static/media/clara-prado.jpg": "/guiajuridico/static/media/clara-prado.51727f31a4099bc0bdfc.jpg",
+    "static/media/logo3d.png": "/guiajuridico/static/media/logo3d.98e39e6c17c0c5a797c8.png",
+    "static/media/logo-dark.png": "/guiajuridico/static/media/logo-dark.04bf2b392625b08a806c.png",
+    "static/media/logo.png": "/guiajuridico/static/media/logo.f15d95342350d3a2a558.png",
+    "static/media/luiz-mendes.jpg": "/guiajuridico/static/media/luiz-mendes.3d6302e8df99ae1355f7.jpg",
     "index.html": "/guiajuridico/index.html",
     "main.34828785.css.map": "/guiajuridico/static/css/main.34828785.css.map",
-    "main.1930069e.js.map": "/guiajuridico/static/js/main.1930069e.js.map",
+    "main.5174cb5d.js.map": "/guiajuridico/static/js/main.5174cb5d.js.map",
     "488.99a45cc3.chunk.js.map": "/guiajuridico/static/js/488.99a45cc3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.34828785.css",
-    "static/js/main.1930069e.js"
+    "static/js/main.5174cb5d.js"
   ]
 }
