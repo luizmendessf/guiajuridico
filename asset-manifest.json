@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/guiajuridico/static/css/main.34828785.css",
+    "main.js": "/guiajuridico/static/js/main.1930069e.js",
+    "static/js/488.99a45cc3.chunk.js": "/guiajuridico/static/js/488.99a45cc3.chunk.js",
+    "static/media/balanca.jpg": "/guiajuridico/static/media/balanca.107b37f20571ccd5a755.jpg",
+    "index.html": "/guiajuridico/index.html",
+    "main.34828785.css.map": "/guiajuridico/static/css/main.34828785.css.map",
+    "main.1930069e.js.map": "/guiajuridico/static/js/main.1930069e.js.map",
+    "488.99a45cc3.chunk.js.map": "/guiajuridico/static/js/488.99a45cc3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.34828785.css",
+    "static/js/main.1930069e.js"
+  ]
+}
