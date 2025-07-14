@@ -7,7 +7,6 @@
   .about__bg-image {
     position: absolute;
     inset: 0;
-    background-image: url('/images/legal-gavel.jpg');
     background-size: cover;
     background-position: center;
     opacity: 0.05;

@@ -9,7 +9,6 @@
   .cta__bg-image {
     position: absolute;
     inset: 0;
-    background-image: url('/images/justice-scales.jpg');
     background-size: cover;
     background-position: center;
     opacity: 0.1;

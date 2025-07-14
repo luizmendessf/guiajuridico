@@ -16,7 +16,7 @@
     linear-gradient(to right, rgb(0, 0, 0), transparent 60%),
     radial-gradient(ellipse at center, transparent 50%, rgba(0, 0, 0, 0.766)),
     radial-gradient(ellipse at center,  rgba(0, 0, 0, 0.7), transparent 40%),
-    url('/images/balanca.jpg');
+    url('../../assets/imagens/balanca.jpg');
   
   background-size: cover;
   background-position: center;
