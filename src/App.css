@@ -1,4 +1,14 @@
-/* App.css (Versão Completa e Corrigida) */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1, h2, h3, h4, p, figure, blockquote, dl, dd {
+  margin: 0;
+}
+
 
 /* ==========================================================================
    1. DEFINIÇÕES DE VARIÁVEIS GLOBAIS (O MAIS IMPORTANTE)
@@ -148,6 +158,7 @@
   
   /* 5. CLASSE UTILITÁRIA GLOBAL  */
   .container {
+    width: 100%;
     max-width: 80rem; /* 1280px */
     margin-left: auto;
     margin-right: auto;
@@ -160,4 +171,18 @@
   @media (min-width: 1024px) {
     .container { padding-left: 2rem; padding-right: 2rem; }
   }
+
+  /* Adicione este código ao seu CSS principal (ex: App.css) */
+
+/* 1. Garante que o corpo da página não tenha vazamentos laterais */
+body, #root {
+  overflow-x: hidden;
+  width: 100vw; /* Força a ocupar 100% da largura da tela */
+}
+
+/* 2. Garante que o invólucro da página e o <main> sejam full-width */
+.homepage, main {
+  width: 100%;
+  display: block; /* Garante o comportamento de bloco padrão */
+}
 
