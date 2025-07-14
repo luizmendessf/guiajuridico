@@ -1,42 +1,53 @@
 // src/pages/Oportunidades.jsx
-
 import { useState, useEffect } from "react";
 import { Search } from "lucide-react";
 import OpportunityCard from "../components/cards/OpportunityCard";
 import Button from "../components/ui/button";
 import "./Oportunidades.css";
 
-// 1. Importe os dados brutos do seu novo arquivo JSON
 import opportunitiesData from '../data/oportunidade.json';
-
-// 2. Importe TODAS as imagens que você referencia no seu JSON
 import legalMeetingImg from '../assets/imagens/legal-meeting.jpg';
-// Adicione aqui outras importações de imagem se tiver mais vagas
 
-// 3. Crie um "mapa" para conectar o nome da imagem (texto) à imagem importada (módulo)
 const imageMap = {
   "legal-meeting.jpg": legalMeetingImg,
-  // "outra-imagem.jpg": outraImagemImportada,
+};
+
+const getOpportunityStatus = (openingDate, closingDate) => {
+  const now = new Date();
+  const start = new Date(openingDate);
+  const end = new Date(closingDate);
+  end.setDate(end.getDate() + 1);
+
+  if (now < start) {
+    return 'Em Breve';
+  } else if (now >= start && now < end) {
+    return 'Abertas';
+  } else {
+    return 'Encerradas';
+  }
 };
 
 const categories = ["Todos", "Estágio", "Trainee", "Congresso", "Competição", "Publicação acadêmica", "Eventos"];
+// ALTERADO: Adicionado "Todas" ao início da lista de filtros de status
+const statusFilters = ["Todas", "Abertas", "Em Breve", "Encerradas"];
 
 export default function Oportunidades() {
-  // 4. Crie um estado para armazenar as vagas depois de processadas
   const [opportunities, setOpportunities] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("Todos");
+  // ALTERADO: O filtro de status agora começa com "Todas" por padrão
+  const [selectedStatus, setSelectedStatus] = useState("Todas");
 
-  // 5. Use o useEffect para processar os dados uma única vez, quando o componente montar
   useEffect(() => {
     const processedOpportunities = opportunitiesData.map(opportunity => ({
       ...opportunity,
-      // Para cada vaga, troque o nome da imagem pela imagem real importada
-      image: imageMap[opportunity.image] 
+      image: imageMap[opportunity.image],
+      status: getOpportunityStatus(opportunity.openingDate, opportunity.closingDate)
     }));
     setOpportunities(processedOpportunities);
-  }, []); // O array vazio [] garante que isso rode só uma vez
+  }, []);
 
+  // ALTERADO: A lógica de filtro agora lida com o caso "Todas" para o status
   const filteredOpportunities = opportunities.filter((opportunity) => {
     const lowerSearchTerm = searchTerm.toLowerCase();
     const matchesSearch =
@@ -44,7 +55,9 @@ export default function Oportunidades() {
       opportunity.company.toLowerCase().includes(lowerSearchTerm) ||
       opportunity.location.toLowerCase().includes(lowerSearchTerm);
     const matchesCategory = selectedCategory === "Todos" || opportunity.type === selectedCategory;
-    return matchesSearch && matchesCategory;
+    // Se "Todas" estiver selecionado, o filtro de status é ignorado (sempre verdadeiro)
+    const matchesStatus = selectedStatus === "Todas" || opportunity.status === selectedStatus;
+    return matchesSearch && matchesCategory && matchesStatus;
   });
 
   return (
@@ -69,6 +82,19 @@ export default function Oportunidades() {
             />
           </div>
 
+          <div className="status-bar">
+            {statusFilters.map((status) => (
+              <Button
+                key={status}
+                variant={selectedStatus === status ? "primary" : "outline"}
+                onClick={() => setSelectedStatus(status)}
+                className="status-button"
+              >
+                {status}
+              </Button>
+            ))}
+          </div>
+
           <div className="categories-bar">
             {categories.map((category) => (
               <Button
@@ -82,7 +108,7 @@ export default function Oportunidades() {
             ))}
           </div>
         </div>
-
+        
         <div className="results-count">
           <p>
             {filteredOpportunities.length} oportunidade{filteredOpportunities.length !== 1 && "s"} encontrada{filteredOpportunities.length !== 1 && "s"}

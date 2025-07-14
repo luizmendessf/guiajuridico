@@ -49,3 +49,52 @@
   html.dark .salary span { color: var(--color-gray-400); }
   .salary p { font-weight: 600; color: var(--color-primary-600); }
   html.dark .salary p { color: var(--color-primary-400); }
+
+  /* Adicione este código ao seu OpportunityCard.css */
+
+/* Estilo para a borda colorida baseada no status */
+.opportunity-card {
+  border-left: 4px solid transparent;
+}
+.status-border--Abertas { border-left-color: #28a745; } /* Verde */
+.status-border--Em.Breve { border-left-color: #ffc107; } /* Amarelo */
+.status-border--Encerradas { border-left-color: #dc3545; } /* Vermelho */
+
+
+/* Estilo para o indicador visual de status */
+.status-indicator {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Cores do indicador */
+.status--Abertas {
+  background-color: #d4edda;
+  color: #155724;
+}
+.status--Em.Breve {
+  background-color: #fff3cd;
+  color: #856404;
+}
+.status--Encerradas {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Cores do indicador no modo escuro */
+html.dark .status--Abertas {
+  background-color: #1c3a2f;
+  color: #75e0a4;
+}
+html.dark .status--Em.Breve {
+  background-color: #3e3820;
+  color: #f7d56e;
+}
+html.dark .status--Encerradas {
+  background-color: #4d1c24;
+  color: #f5a0a9;
+}

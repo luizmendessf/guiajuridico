@@ -1,78 +1,42 @@
 [
-    {
-      "id": 1,
-      "title": "Estágio em Direito Corporativo",
-      "company": "Machado Meyer Advogados",
-      "location": "São Paulo, SP",
-      "type": "Estágio",
-      "deadline": "15/02/2024",
-      "description": "Oportunidade de estágio em uma das maiores bancas de advocacia do país, com foco em fusões e aquisições.",
-      "requirements": ["Cursando 7º ou 8º semestre", "Inglês avançado", "Disponibilidade 6h/dia"],
-      "salary": "R$ 2.500 + benefícios",
-      "image": "legal-meeting.jpg",
-      "applicationLink": "https://www.machadomeyer.com.br/carreira"
-    },
-    {
-      "id": 2,
-      "title": "Programa de Trainee Jurídico",
-      "company": "Banco Itaú",
-      "location": "São Paulo, SP",
-      "type": "Congresso",
-      "deadline": "28/02/2024",
-      "description": "Programa de 18 meses para recém-formados em Direito com rotação em diferentes áreas jurídicas do banco.",
-      "requirements": ["Formado até 2 anos", "Inglês fluente", "Disponibilidade para viagens"],
-      "salary": "R$ 8.500 + benefícios",
-      "image": "legal-meeting.jpg",
-      "applicationLink": "https://www.itau.com.br/carreiras/programa-de-trainee/"
-    },
-    {
-      "id": 3,
-      "title": "Estágio em Direito Corporativo",
-      "company": "Machado Meyer Advogados",
-      "location": "São Paulo, SP",
-      "type": "Estágio",
-      "deadline": "15/02/2024",
-      "description": "Oportunidade de estágio em uma das maiores bancas de advocacia do país, com foco em fusões e aquisições.",
-      "requirements": ["Cursando 7º ou 8º semestre", "Inglês avançado", "Disponibilidade 6h/dia"],
-      "salary": "R$ 2.500 + benefícios",
-      "image": "legal-meeting.jpg",
-      "applicationLink": "https://www.machadomeyer.com.br/carreira"
-    },
-    {
-      "id": 4,
-      "title": "Estágio em Direito Corporativo",
-      "company": "Machado Meyer Advogados",
-      "location": "São Paulo, SP",
-      "type": "Competição",
-      "deadline": "15/02/2024",
-      "description": "Oportunidade de estágio em uma das maiores bancas de advocacia do país, com foco em fusões e aquisições.",
-      "requirements": ["Cursando 7º ou 8º semestre", "Inglês avançado", "Disponibilidade 6h/dia"],
-      "salary": "R$ 2.500 + benefícios",
-      "image": "legal-meeting.jpg",
-      "applicationLink": "https://www.machadomeyer.com.br/carreira"
-    },    {
-      "id": 5,
-      "title": "Estágio em Direito Corporativo",
-      "company": "Machado Meyer Advogados",
-      "location": "São Paulo, SP",
-      "type": "Eventos",
-      "deadline": "15/02/2024",
-      "description": "Oportunidade de estágio em uma das maiores bancas de advocacia do país, com foco em fusões e aquisições.",
-      "requirements": ["Cursando 7º ou 8º semestre", "Inglês avançado", "Disponibilidade 6h/dia"],
-      "salary": "R$ 2.500 + benefícios",
-      "image": "legal-meeting.jpg",
-      "applicationLink": "https://www.machadomeyer.com.br/carreira"
-    },     {
-      "id": 6,
-      "title": "Estágio em Direito Corporativo",
-      "company": "Machado Meyer Advogados",
-      "location": "São Paulo, SP",
-      "type": "Competição",
-      "deadline": "15/02/2024",
-      "description": "Oportunidade de estágio em uma das maiores bancas de advocacia do país, com foco em fusões e aquisições.",
-      "requirements": ["Cursando 7º ou 8º semestre", "Inglês avançado", "Disponibilidade 6h/dia"],
-      "salary": "R$ 2.500 + benefícios",
-      "image": "legal-meeting.jpg",
-      "applicationLink": "https://www.machadomeyer.com.br/carreira"
-    }
-  ]
+  {
+    "id": 1,
+    "title": "Estágio em Direito Corporativo (Vaga Aberta)",
+    "company": "Machado Meyer Advogados",
+    "location": "São Paulo, SP",
+    "type": "Estágio",
+    "openingDate": "2025-07-01",
+    "closingDate": "2025-07-31",
+    "description": "Oportunidade de estágio em uma das maiores bancas de advocacia do país, com foco em fusões e aquisições.",
+    "requirements": ["Cursando 7º ou 8º semestre", "Inglês avançado"],
+    "salary": "R$ 2.500 + benefícios",
+    "image": "lawyer-office.jpg",
+    "applicationLink": "https://www.machadomeyer.com.br/carreira"
+  },
+  {
+    "id": 2,
+    "title": "Programa de Trainee Jurídico (Inscrições Encerradas)",
+    "company": "Banco Itaú",
+    "location": "São Paulo, SP",
+    "type": "Trainee",
+    "openingDate": "2025-05-15",
+    "closingDate": "2025-06-30",
+    "description": "Programa de 18 meses para recém-formados em Direito com rotação em diferentes áreas jurídicas do banco.",
+    "requirements": ["Formado até 2 anos", "Inglês fluente"],
+    "salary": "R$ 8.500 + benefícios",
+    "applicationLink": "https://www.itau.com.br/carreiras/programa-de-trainee/"
+  },
+  {
+    "id": 3,
+    "title": "Competição de Arbitragem (Inscrições em Breve)",
+    "company": "CAM-CCBC",
+    "location": "Online",
+    "type": "Competição",
+    "openingDate": "2025-08-01",
+    "closingDate": "2025-08-31",
+    "description": "Participe da maior competição de arbitragem da América Latina e desenvolva suas habilidades práticas.",
+    "requirements": ["Equipes de 2 a 4 membros", "Estudantes de Direito"],
+    "salary": "N/A",
+    "applicationLink": "https://cam-ccbc.com.br/"
+  }
+]

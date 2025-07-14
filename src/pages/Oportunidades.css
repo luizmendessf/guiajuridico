@@ -50,3 +50,15 @@
   @media (min-width: 1024px) { .opportunities-grid { grid-template-columns: 1fr 1fr; } }
   
   .no-results { text-align: center; padding: 3rem 0; font-size: 1.25rem; color: var(--color-gray-500); grid-column: 1 / -1; }
+
+  /* Adicione este código ao seu Oportunidades.css */
+.status-bar { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 0.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-gray-200);
+  }
+  html.dark .status-bar {
+    border-color: var(--color-gray-800);
+  }
