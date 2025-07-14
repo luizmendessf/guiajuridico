@@ -3,19 +3,23 @@
 import ProfileCard from "../cards/ProfileCard";
 import "./AboutSection.css";
 
+// 1. Importe as imagens da equipe aqui no topo
+import claraPradoImg from '../../assets/imagens/clara-prado.jpg';
+import luizMendesImg from '../../assets/imagens/luiz-mendes.jpg';
+
 const teamData = [
   {
     name: "Clara Prado",
     role: "Co-fundadora",
-    image: "/images/clara-prado.jpg",
-    description: "Bacharelanda em Direito pela UFS e presidente da Sociedade Sergipana de Debates. Idealizou o Guia Jurídico para ampliar o acesso ao conhecimento na área jurídica. \n",
+    image: claraPradoImg, // 2. Use as variáveis importadas aqui
+    description: "Bacharelanda em Direito pela UFS e presidente da Sociedade Sergipana de Debates. Idealizou o Guia Jurídico para ampliar o acesso ao conhecimento na área jurídica.",
     variant: "primary",
     animation: "anim-slide-in-left"
   },
   {
     name: "Luiz Mendes",
     role: "Co-fundador",
-    image: "/images/luiz-mendes.jpg",
+    image: luizMendesImg, // 2. Use as variáveis importadas aqui
     description: "Desenvolvedor full-stack e bacharelando em Ciência da Computação. Criou o Guia Jurídico com o propósito de facilitar o acesso à informação por meio da tecnologia.",
     variant: "secondary",
     animation: "anim-slide-in-right"

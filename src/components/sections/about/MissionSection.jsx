@@ -2,6 +2,9 @@
 import { Users, Target, Award } from "lucide-react";
 import "./MissionSection.css";
 
+// 1. Importe a imagem aqui
+import legalMeetingImg from '../../../assets/imagens/legal-meeting.jpg';
+
 const stats = [
     { icon: Users, label: "com profissionais da área", value: "Conecte-se", color: "from-primary", delay: "0s" },
     { icon: Target, label: "Recursos educativos", value: "Obtenha", color: "from-secondary", delay: "0.1s" },
@@ -35,7 +38,8 @@ export default function MissionSection() {
             </div>
           </div>
           <div className="mission__image-wrapper anim-slide-in-right">
-            <img src="/images/legal-meeting.jpg" alt="Reunião Jurídica" className="mission__image" />
+            {/* 2. Use a variável importada aqui */}
+            <img src={legalMeetingImg} alt="Reunião Jurídica" className="mission__image" />
             <div className="mission__image-overlay"></div>
             <div className="mission__image-adornment">
               <Award size={48} />

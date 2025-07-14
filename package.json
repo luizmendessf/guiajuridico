@@ -1,16 +1,14 @@
 {
-  "homepage": "https://luizmendessf.github.io/guiajuridico",
+  "homepage": "https://guiajuridico.org",
   "name": "guiajuridico",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+"scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build && cp dist/index.html dist/404.html && gh-pages -d dist"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

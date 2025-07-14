@@ -1,23 +1,22 @@
 import { Link } from "react-router-dom";
-import { Instagram, Linkedin, Mail, Phone } from "lucide-react";
-import "./Footer.css"; // Importa o CSS puro
-import { useState, useEffect } from "react"; // 1. Importe os hooks
+import { Instagram, Linkedin, Mail } from "lucide-react"; // Removido o Phone que não era usado
+import "./Footer.css"; 
+import { useState, useEffect } from "react";
+
+// 1. IMPORTE AS IMAGENS AQUI NO TOPO
+import logoLight from '../../assets/imagens/logo.png';
+import logoDark from '../../assets/imagens/logo-dark.png';
 
 export default function Footer() {
-  // 2. Crie um estado para verificar se o modo escuro está ativo
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-  // 3. Use useEffect para detectar a preferência de tema do sistema
   useEffect(() => {
-    // Verifica a preferência de cor do usuário ao carregar o componente
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     setIsDarkMode(mediaQuery.matches);
 
-    // Adiciona um listener para mudanças no tema
     const handler = (e) => setIsDarkMode(e.matches);
     mediaQuery.addEventListener('change', handler);
 
-    // Limpa o listener quando o componente é desmontado
     return () => mediaQuery.removeEventListener('change', handler);
   }, []);
 
@@ -27,9 +26,9 @@ export default function Footer() {
         <div className="footer__grid">
           <div className="footer__main-column">
             <Link to="/" className="footer__logo-link">
-              {/* 4. Alterne o src da imagem com base no estado isDarkMode */}
+              {/* 2. USE AS VARIÁVEIS IMPORTADAS AQUI */}
               <img
-                src={isDarkMode ? "images/logo-dark.png" : "images/logo.png"}
+                src={isDarkMode ? logoDark : logoLight}
                 alt="Guia Jurídico"
                 className="footer__logo-img"
               />

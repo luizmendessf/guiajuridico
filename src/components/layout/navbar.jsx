@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, Sun, Moon } from "lucide-react";
-import "./Navbar.css"; // Importa o CSS puro
+import "./Navbar.css";
+
+// 1. IMPORTE OS LOGOS NO TOPO DO ARQUIVO
+import logoLight from '../../assets/imagens/logo3d.png'; // Caminho para o logo do modo claro
+import logoDark from '../../assets/imagens/logo-dark.png'; // Caminho para o logo do modo escuro
 
 // Função helper para alternar o tema
 const toggleTheme = () => {
@@ -25,6 +29,8 @@ export default function Navbar() {
   useEffect(() => {
     if (isDark) {
       document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
     }
     // Lidar com o scroll para o efeito da navbar
     const handleScroll = () => {
@@ -49,7 +55,8 @@ export default function Navbar() {
 
   const navClasses = `navbar ${scrolled ? 'navbar--scrolled' : ''}`;
 
-  const logoSrc = isDark ? "/images/logo-dark.png" : "/images/logo3d.png";
+  // 2. USE AS VARIÁVEIS IMPORTADAS PARA DEFINIR O SRC DO LOGO
+  const logoSrc = isDark ? logoDark : logoLight;
 
   return (
     <nav className={navClasses}>

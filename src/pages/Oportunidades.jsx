@@ -1,47 +1,41 @@
 // src/pages/Oportunidades.jsx
-import { useState } from "react";
+
+import { useState, useEffect } from "react";
 import { Search } from "lucide-react";
 import OpportunityCard from "../components/cards/OpportunityCard";
-import Button from "../components/ui/button"; // Reutilizando nosso botão
+import Button from "../components/ui/button";
 import "./Oportunidades.css";
 
-// Os dados podem ser movidos para um arquivo separado no futuro
-const opportunities = [
-  // ... (cole aqui a lista de 'opportunities' do arquivo original)
-  {
-    id: 1,
-    title: "Estágio em Direito Corporativo",
-    company: "Machado Meyer Advogados",
-    location: "São Paulo, SP",
-    type: "Estágio",
-    deadline: "15/02/2024",
-    description:
-      "Oportunidade de estágio em uma das maiores bancas de advocacia do país, com foco em fusões e aquisições.",
-    requirements: ["Cursando 7º ou 8º semestre", "Inglês avançado", "Disponibilidade 6h/dia"],
-    salary: "R$ 2.500 + benefícios",
-    image: "/images/lawyer-office.jpg",
-  },
-   {
-    id: 2,
-    title: "Programa de Trainee Jurídico",
-    company: "Banco Itaú",
-    location: "São Paulo, SP",
-    type: "Trainee",
-    deadline: "28/02/2024",
-    description:
-      "Programa de 18 meses para recém-formados em Direito com rotação em diferentes áreas jurídicas do banco.",
-    requirements: ["Formado até 2 anos", "Inglês fluente", "Disponibilidade para viagens"],
-    salary: "R$ 8.500 + benefícios",
-    image: "/images/legal-meeting.jpg",
-  },
-  // etc...
-];
+// 1. Importe os dados brutos do seu novo arquivo JSON
+import opportunitiesData from '../data/oportunidade.json';
 
-const categories = ["Todos", "Estágio", "Trainee", "Olimpíada", "Concurso"];
+// 2. Importe TODAS as imagens que você referencia no seu JSON
+import legalMeetingImg from '../assets/imagens/legal-meeting.jpg';
+// Adicione aqui outras importações de imagem se tiver mais vagas
+
+// 3. Crie um "mapa" para conectar o nome da imagem (texto) à imagem importada (módulo)
+const imageMap = {
+  "legal-meeting.jpg": legalMeetingImg,
+  // "outra-imagem.jpg": outraImagemImportada,
+};
+
+const categories = ["Todos", "Estágio", "Trainee", "Congresso", "Competição", "Publicação acadêmica", "Eventos"];
 
 export default function Oportunidades() {
+  // 4. Crie um estado para armazenar as vagas depois de processadas
+  const [opportunities, setOpportunities] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("Todos");
+
+  // 5. Use o useEffect para processar os dados uma única vez, quando o componente montar
+  useEffect(() => {
+    const processedOpportunities = opportunitiesData.map(opportunity => ({
+      ...opportunity,
+      // Para cada vaga, troque o nome da imagem pela imagem real importada
+      image: imageMap[opportunity.image] 
+    }));
+    setOpportunities(processedOpportunities);
+  }, []); // O array vazio [] garante que isso rode só uma vez
 
   const filteredOpportunities = opportunities.filter((opportunity) => {
     const lowerSearchTerm = searchTerm.toLowerCase();

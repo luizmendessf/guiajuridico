@@ -14,6 +14,7 @@ export default function OpportunityCard({ opportunity }) {
     description,
     requirements,
     salary,
+    applicationLink, // 1. Receba o 'applicationLink' ao desestruturar a prop
   } = opportunity;
 
   // O tipo é passado como um atributo de dados para estilização no CSS
@@ -53,9 +54,12 @@ export default function OpportunityCard({ opportunity }) {
             <span>Remuneração:</span>
             <p>{salary}</p>
           </div>
-          <Button variant="primary">
-            Candidatar-se <ExternalLink />
-          </Button>
+          {/* 2. Adicione a prop 'href' e a lógica condicional ao botão */}
+          {applicationLink && (
+            <Button href={applicationLink} variant="primary">
+              Candidatar-se <ExternalLink size={16} />
+            </Button>
+          )}
         </div>
       </div>
     </div>

@@ -4,10 +4,16 @@ import FeatureCard from "../cards/FeatureCard";
 import { Search, Users, BookOpen } from "lucide-react";
 import "./FeaturesSection.css";
 
+// 1. Importe as imagens aqui
+import buscaImg from '../../assets/imagens/busca.jpg';
+import studentsCampusImg from '../../assets/imagens/students-campus.jpg';
+import legalMeetingImg from '../../assets/imagens/legal-meeting.jpg';
+
 const featuresData = [
-    { icon: Search, title: "Busca Inteligente", description: "Encontre oportunidades personalizadas para seu perfil", image: "/images/busca.jpg", delay: "0s" },
-    { icon: Users, title: "Networking", description: "Conecte-se com profissionais e colegas da área", image: "/images/students-campus.jpg", delay: "0.2s" },
-    { icon: BookOpen, title: "Recursos Educativos", description: "Materiais e dicas para impulsionar sua carreira", image: "/images/legal-meeting.jpg", delay: "0.4s" },
+    // 2. Use as variáveis importadas aqui
+    { icon: Search, title: "Busca Inteligente", description: "Encontre oportunidades personalizadas para seu perfil", image: buscaImg, delay: "0s" },
+    { icon: Users, title: "Networking", description: "Conecte-se com profissionais e colegas da área", image: studentsCampusImg, delay: "0.2s" },
+    { icon: BookOpen, title: "Recursos Educativos", description: "Materiais e dicas para impulsionar sua carreira", image: legalMeetingImg, delay: "0.4s" },
 ];
 
 export default function FeaturesSection() {
