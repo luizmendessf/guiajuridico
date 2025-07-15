@@ -7,23 +7,24 @@ export default function OpportunityCard({ opportunity }) {
   const {
     image,
     type,
-    closingDate, // ALTERADO: de 'deadline' para 'closingDate'
+    closingDate,
     title,
     company,
     location,
+    description,
+    requirements,
+    salary,
     applicationLink,
-    status, // NOVO: Recebendo o status
+    status,
   } = opportunity;
 
-  // NOVO: Função para formatar o texto do status
   const getStatusText = (status) => {
     if (status === 'Abertas') return 'Inscrições Abertas';
     if (status === 'Em Breve') return 'Abre em Breve';
     return 'Inscrições Encerradas';
-  }
+  };
 
   return (
-    // NOVO: Adicionando uma classe com o status ao card principal
     <div className={`card opportunity-card status-border--${status}`}>
       <div className="opportunity-card__header">
         <div className="opportunity-card__image-wrapper">
@@ -31,7 +32,6 @@ export default function OpportunityCard({ opportunity }) {
         </div>
         <div className="opportunity-card__info-bar">
           <span className="badge" data-type={type}>{type}</span>
-          {/* NOVO: Indicador de status visual */}
           <div className={`status-indicator status--${status}`}>
             {getStatusText(status)}
           </div>
@@ -44,20 +44,53 @@ export default function OpportunityCard({ opportunity }) {
           <MapPin size={16} /> {location}
         </p>
       </div>
+      
       <div className="card__content">
-        {/* ...código do conteúdo do card sem alterações... */}
-      </div>
-      <div className="opportunity-card__footer">
-        <div className="deadline">
-            <Clock size={16} />
-            <span>Encerra em: {new Date(closingDate).toLocaleDateString('pt-BR', { timeZone: 'UTC' })}</span>
+        <p className="opportunity-card__description">{description}</p>
+        
+        {requirements && requirements.length > 0 && (
+          <div className="opportunity-card__requirements">
+            <h4>Requisitos:</h4>
+            <ul>
+              {requirements.map((req, index) => (
+                <li key={index}>{req}</li>
+              ))}
+            </ul>
           </div>
-        {applicationLink && status === 'Abertas' && (
-          <Button href={applicationLink} variant="primary">
-            Candidatar-se <ExternalLink size={16} />
-          </Button>
         )}
       </div>
+      
+      {/* ### INÍCIO DA CORREÇÃO ### */}
+      <div className="opportunity-card__footer">
+        <div className="footer__details">
+          {salary && salary !== "N/A" && (
+            <div className="salary">
+              <span>Remuneração:</span>
+              <p>{salary}</p>
+            </div>
+          )}
+
+          {/* Renderiza a data APENAS se ela existir E NÃO FOR a data futura */}
+          {closingDate && closingDate !== '2099-12-31' && (
+            <div className="deadline">
+              <Clock size={16} />
+              <span>
+                {status === 'Encerradas' ? 'Encerrado em: ' : 'Encerra em: '}
+                {new Date(closingDate).toLocaleDateString('pt-BR', { timeZone: 'UTC' })}
+              </span>
+            </div>
+          )}
+        </div>
+        
+        {applicationLink && status === 'Abertas' && (
+          <div className="footer__action">
+            <Button href={applicationLink} variant="primary">
+              Candidatar-se <ExternalLink size={16} />
+            </Button>
+          </div>
+        )}
+      </div>
+      {}
     </div>
   );
 }

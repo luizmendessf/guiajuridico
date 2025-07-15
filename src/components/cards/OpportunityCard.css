@@ -44,7 +44,15 @@
   .opportunity-card__requirements li { display: flex; align-items: flex-start; }
   .opportunity-card__requirements li::before { content: '•'; color: var(--color-primary-500); margin-right: 0.5rem; font-size: 1.25rem; line-height: 1; }
   
-  .opportunity-card__footer { display: flex; justify-content: space-between; align-items: center; }
+  .opportunity-card__footer { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-gray-200);
+    margin-top: auto;
+    gap: 5%;
+  }
   .salary span { font-size: 0.875rem; color: var(--color-gray-500); }
   html.dark .salary span { color: var(--color-gray-400); }
   .salary p { font-weight: 600; color: var(--color-primary-600); }
@@ -97,4 +105,8 @@ html.dark .status--Em.Breve {
 html.dark .status--Encerradas {
   background-color: #4d1c24;
   color: #f5a0a9;
+}
+
+html.dark .opportunity-card__footer {
+  border-top-color: var(--color-gray-800);
 }
