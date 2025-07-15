@@ -14,7 +14,6 @@ import AppRoutes from "./routes/AppRoutes";
 
 function App() {
   return (
-    // A CORREÇÃO É AQUI: Adicione o basename
     <Router >
       {/* O Navbar e o Footer envolvem todas as rotas, aparecendo em todas as páginas. */}
       <Navbar />

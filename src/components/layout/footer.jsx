@@ -38,7 +38,7 @@ export default function Footer() {
             </p>
             <div className="footer__socials">
               <a
-                href="https://instagram.com/guiajuridico.br"
+                href="https://instagram.com/guiajuridicoorg"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="footer__social-link"
@@ -70,11 +70,11 @@ export default function Footer() {
             <ul className="footer__contact-list">
               <li className="footer__contact-item">
                 <Mail size={16} />
-                <span>contato@guiajuridico.com</span>
+                <span>guiajuridicobr@gmail.com</span>
               </li>
               <li className="footer__contact-item">
                 <Instagram size={16} />
-                <span>@guiajuridico.br</span>
+                <span>@guiajuridicoorg</span>
               </li>
             </ul>
           </div>
