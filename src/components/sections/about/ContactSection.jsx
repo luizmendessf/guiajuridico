@@ -99,7 +99,7 @@ export default function ContactSection() {
             <div className="contact-info__list">
                 {/* Usei o email do seu Service ID aqui */}
               <ContactInfo icon={Mail} title="Email" value="guiajuridicobr@gmail.com" colorClass="bg-primary"/>
-              <ContactInfo icon={Instagram} title="Instagram" value="@guiajuridico.br" colorClass="bg-secondary"/>
+              <ContactInfo icon={Instagram} title="Instagram" value="@guiajuridicoorg" colorClass="bg-secondary"/>
               <ContactInfo icon={MapPin} title="Localização" value="Aracaju, SE - Brasil" colorClass="bg-primary-secondary"/>
             </div>
           </div>
